@@ -222,6 +222,7 @@ function makeGUI() {
 
   let datasetKey = getKeyFromValue(datasets, state.dataset);
   // Select the dataset according to the current state.
+  datasetKey = "gauss";
   d3.select(`canvas[data-dataset=${datasetKey}]`)
     .classed("selected", true);
 
@@ -293,7 +294,7 @@ function makeGUI() {
   d3.select("label[for='percTrainData'] .value").text(state.percTrainData);
 
   let noise = d3.select("#noise").on("input", function() {
-    state.noise = this.value;
+    state.noise = 20;
     d3.select("label[for='noise'] .value").text(this.value);
     generateData();
     parametersChanged = true;

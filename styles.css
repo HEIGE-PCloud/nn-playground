@@ -14,7 +14,9 @@ limitations under the License.
 ==============================================================================*/
 
 /* General Type */
-
+.hidden {
+  display: none;
+}
 body {
   font-family: "Helvetica", "Arial", sans-serif;
   background-color: #f7f7f7;

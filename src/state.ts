@@ -36,10 +36,10 @@ export let regularizations: {[key: string]: nn.RegularizationFunction} = {
 
 /** A map between dataset names and functions that generate classification data. */
 export let datasets: {[key: string]: dataset.DataGenerator} = {
-  "circle": dataset.classifyCircleData,
-  "xor": dataset.classifyXORData,
+  "circle": dataset.classifyTwoGaussData,
+  "xor": dataset.classifyTwoGaussData,
   "gauss": dataset.classifyTwoGaussData,
-  "spiral": dataset.classifySpiralData,
+  "spiral": dataset.classifyTwoGaussData,
 };
 
 /** A map between dataset names and functions that generate regression data. */
@@ -137,7 +137,7 @@ export class State {
   learningRate = 0.03;
   regularizationRate = 0;
   showTestData = false;
-  noise = 0;
+  noise = 20;
   batchSize = 10;
   discretize = false;
   tutorial: string = null;
